@@ -1,14 +1,6 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 Train::Train() : countOp(0), first(nullptr) {}
-Train::~Train() {
-    Cage* current = first;
-    while (current != nullptr) {
-        Cage* next = current->next;
-        delete current;
-        current = next;
-    }
-}
 void Train::addCage(bool light) {
     Cage* newCage = new Cage;
     newCage->light = light;
